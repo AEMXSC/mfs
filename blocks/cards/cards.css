@@ -101,3 +101,40 @@
     font-size: 28px;
   }
 }
+
+/* Role selection cards variant — no images, burgundy header boxes */
+/* Triggered when cards have no images (EDS adds .cards.no-images or similar) */
+.hero + .section .cards > ul > li,
+.section:nth-child(2) .cards > ul > li {
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.hero + .section .cards > ul > li > div:last-child,
+.section:nth-child(2) .cards > ul > li > div:last-child {
+  padding: 16px;
+}
+
+.hero + .section .cards a.button,
+.section:nth-child(2) .cards a.button {
+  background: var(--accent-primary, #4b0532);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 16px;
+  display: block;
+  text-align: center;
+  border-radius: 0;
+}
+
+.hero + .section .cards a.button:hover,
+.section:nth-child(2) .cards a.button:hover {
+  background: var(--accent-secondary, #bd173d);
+  color: #fff;
+  text-decoration: none;
+}
