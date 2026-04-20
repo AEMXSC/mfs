@@ -1,49 +1,111 @@
 /* Header — MFS Style */
-/* Burgundy logo, navigation links, utility bar */
 
 header {
   background: #fff;
-  border-bottom: 1px solid #eee;
+  height: var(--nav-height, 64px);
 }
 
-header .header {
+header nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: var(--nav-height, 64px);
+  gap: 0;
 }
 
-header nav {
+/* Logo — first element */
+header nav .nav-brand {
+  margin-right: auto;
+}
+
+header nav .nav-brand img {
+  height: 36px;
+  width: auto;
+}
+
+/* Main nav sections */
+header nav .nav-sections ul {
+  list-style: none;
   display: flex;
-  align-items: center;
   gap: 24px;
+  margin: 0;
+  padding: 0;
 }
 
-header a:any-link {
+header nav .nav-sections a {
   color: var(--accent-secondary, #bd173d);
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-header a:hover {
+header nav .nav-sections a:hover {
   color: var(--accent-primary, #4b0532);
+  text-decoration: underline;
 }
 
-header .nav-brand img {
-  height: 40px;
-  width: auto;
-}
-
-header ul {
+/* Right-side tools (Contact Us, Sign In) */
+header nav .nav-tools ul {
   list-style: none;
   display: flex;
-  gap: 24px;
+  gap: 16px;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+
+header nav .nav-tools a {
+  color: var(--text-color, #404652);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header nav .nav-tools a:hover {
+  color: var(--accent-secondary, #bd173d);
+}
+
+/* Sign In button style */
+header nav .nav-tools li:last-child a {
+  background: var(--accent-primary, #4b0532);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+header nav .nav-tools li:last-child a:hover {
+  background: var(--accent-secondary, #bd173d);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hamburger menu — hide on desktop */
+header nav .nav-hamburger {
+  display: none;
+}
+
+@media (width < 900px) {
+  header nav .nav-sections,
+  header nav .nav-tools {
+    display: none;
+  }
+
+  header nav .nav-hamburger {
+    display: block;
+  }
+}
+
+/* Color bar below header (decorative — added via border) */
+header::after {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-primary) 33%, #c4122f 33% 66%, #00b4d8 66%);
 }
