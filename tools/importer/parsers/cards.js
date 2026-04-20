@@ -79,5 +79,19 @@ export default function parse(element, { document }) {
     cells,
   });
 
+  // Remove sibling junk inside the wrapper (e.g., "TOP" scroll link, lightbox remnants)
+  const parent = element.parentElement;
+  if (parent) {
+    parent.querySelectorAll('p').forEach((p) => {
+      const text = (p.textContent || '').trim();
+      if (text === 'TOP' || text === 'close video' || !text) p.remove();
+    });
+    // Remove tracking pixels
+    parent.querySelectorAll('img[src*="rlcdn"], img[src*="demdex"]').forEach((img) => {
+      const p = img.closest('p');
+      if (p) p.remove(); else img.remove();
+    });
+  }
+
   element.replaceWith(block);
 }

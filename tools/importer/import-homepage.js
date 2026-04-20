@@ -40,7 +40,7 @@ const PAGE_TEMPLATE = {
     },
     {
       name: 'cards',
-      instances: ['.aem-wrap--asset-list-with-links .asset-list-with-links'],
+      instances: ['.aem-wrap--asset-list-with-links'],
     },
   ],
   sections: [
@@ -152,6 +152,16 @@ export default {
 
     // 4. Execute afterTransform (remove header/footer + add section breaks)
     executeTransformers('afterTransform', main, payload);
+
+    // 4b. Final junk cleanup (remnants that survive transformers and parsers)
+    main.querySelectorAll('p').forEach((p) => {
+      const text = (p.textContent || '').trim();
+      if (text === 'TOP' || text === 'close video' || text === '') p.remove();
+    });
+    main.querySelectorAll('img[src*="rlcdn"], img[src*="demdex"]').forEach((img) => {
+      const p = img.closest('p');
+      if (p) p.remove(); else img.remove();
+    });
 
     // 5. Apply WebImporter built-in rules
     const hr = document.createElement('hr');

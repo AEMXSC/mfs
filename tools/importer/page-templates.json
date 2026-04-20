@@ -17,7 +17,7 @@
         {
           "name": "cards",
           "instances": [
-            ".aem-wrap--asset-list-with-links .asset-list-with-links"
+            ".aem-wrap--asset-list-with-links"
           ]
         }
       ],

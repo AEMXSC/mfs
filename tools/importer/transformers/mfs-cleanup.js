@@ -24,6 +24,20 @@ export default function transform(hookName, element, payload) {
       '.search-overlay',                     // Search flyout overlays
     ]);
 
+    // Remove scroll-to-top links, video lightbox remnants, tracking pixels early
+    element.querySelectorAll('p').forEach((p) => {
+      const text = (p.textContent || '').trim();
+      if (text === 'TOP' || text === 'close video') p.remove();
+    });
+    element.querySelectorAll('a[title="Close Modal"], a.close-lightbox').forEach((a) => {
+      const p = a.closest('p');
+      if (p) p.remove(); else a.remove();
+    });
+    element.querySelectorAll('img[src*="rlcdn.com"], img[src*="demdex.net"]').forEach((img) => {
+      const p = img.closest('p');
+      if (p) p.remove(); else img.remove();
+    });
+
     // CRITICAL: Move hero banner from header to main BEFORE header removal
     // The hero (.heroBannerWithRoleContainer) is inside <header> but is authorable content
     const hero = element.querySelector('.heroBannerWithRoleContainer');
@@ -48,6 +62,34 @@ export default function transform(hookName, element, payload) {
       '.sr-only',                // Screen reader only elements
       'svg:not(.heroBannerWithRoleContainer svg)', // SVG icons (not hero)
     ]);
+
+    // Remove leftover junk: "TOP" scroll link, "close video" modal, tracking pixels
+    element.querySelectorAll('p').forEach((p) => {
+      const text = (p.textContent || '').trim();
+      if (text === 'TOP') p.remove();
+      if (text === 'close video') p.remove();
+    });
+    element.querySelectorAll('a[title="Close Modal"]').forEach((a) => a.closest('p')?.remove() || a.remove());
+    // Remove tracking pixels (1x1 gifs, rlcdn, etc.)
+    element.querySelectorAll('img').forEach((img) => {
+      const src = img.src || '';
+      if (src.includes('rlcdn.com') || src.includes('demdex.net') || src.includes('.gif') && !src.includes('content/dam')) {
+        const p = img.closest('p');
+        if (p) p.remove(); else img.remove();
+      }
+    });
+    // Remove empty headings
+    element.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((h) => {
+      if (!(h.textContent || '').trim()) h.remove();
+    });
+    // Fix broken alt text from Handlebars templates
+    element.querySelectorAll('img[alt*="assetDetails"]').forEach((img) => {
+      const src = img.src || '';
+      if (src.includes('Collective_Expertise')) img.alt = 'Collective Expertise';
+      else if (src.includes('Risk_Management')) img.alt = 'Risk Management';
+      else if (src.includes('Longterm_Discipline')) img.alt = 'Long-Term Discipline';
+      else img.alt = '';
+    });
 
     // Clean up tracking/analytics attributes
     const allElements = element.querySelectorAll('*');
