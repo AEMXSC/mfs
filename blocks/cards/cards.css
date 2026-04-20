@@ -1,27 +1,65 @@
+/* Cards Block — MFS Style */
+/* Image cards with titles, 3-column grid on desktop */
+
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  text-align: center;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
-}
-
-.cards .cards-card-image {
-  line-height: 0;
-}
-
-.cards > ul > li img {
+.cards > ul > li > div:first-child picture img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 317 / 190;
   object-fit: cover;
+}
+
+.cards > ul > li > div:last-child {
+  padding: 12px 0;
+}
+
+.cards > ul > li > div:last-child p {
+  margin: 0;
+}
+
+.cards > ul > li > div:last-child a {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.cards > ul > li > div:last-child a:hover {
+  background-color: var(--accent-primary, #4b0532);
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (width >= 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
 }
