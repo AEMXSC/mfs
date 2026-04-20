@@ -1,5 +1,5 @@
-/* Cards Block — MFS Style */
-/* Image cards with titles, 3-column grid on desktop */
+/* Cards Block — MFS Style (matched from www.mfs.com) */
+/* Title above image, centered layout, burgundy text links */
 
 .cards > ul {
   list-style: none;
@@ -7,48 +7,68 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 32px;
 }
 
 .cards > ul > li {
-  border: none;
-  border-radius: 0;
-  overflow: hidden;
   text-align: center;
 }
 
+/* Title ABOVE image — reverse the default order */
+.cards > ul > li {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Image */
 .cards > ul > li > div:first-child picture img {
   width: 100%;
   aspect-ratio: 317 / 190;
   object-fit: cover;
 }
 
+/* Title area — burgundy, centered, 28px */
 .cards > ul > li > div:last-child {
-  padding: 12px 0;
+  padding: 0 0 8px;
 }
 
 .cards > ul > li > div:last-child p {
-  margin: 0;
+  margin: 0 0 8px;
 }
 
 .cards > ul > li > div:last-child a {
-  display: inline-block;
-  padding: 8px 24px;
-  background-color: #333;
-  color: #fff;
+  color: var(--accent-primary, #4b0532);
+  font-size: 22px;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 2px;
-  transition: background-color 0.2s;
+  display: block;
+  text-align: center;
 }
 
 .cards > ul > li > div:last-child a:hover {
-  background-color: var(--accent-primary, #4b0532);
+  color: var(--accent-secondary, #bd173d);
+  text-decoration: underline;
+}
+
+/* Learn More CTA — right-aligned, red, with arrow feel */
+.cards + p {
+  text-align: right;
+  margin-top: 24px;
+}
+
+.cards + p a {
+  color: var(--accent-secondary, #bd173d);
+  font-size: 18px;
+  font-weight: 400;
   text-decoration: none;
-  color: #fff;
+}
+
+.cards + p a:hover {
+  text-decoration: underline;
+}
+
+.cards + p a::after {
+  content: ' →';
 }
 
 @media (width >= 600px) {
@@ -60,6 +80,10 @@
 @media (width >= 900px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
+  }
+
+  .cards > ul > li > div:last-child a {
+    font-size: 28px;
   }
 }

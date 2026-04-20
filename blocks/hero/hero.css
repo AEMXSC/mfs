@@ -1,5 +1,4 @@
-/* Hero Block — MFS Style */
-/* Full-width hero with background image, white text overlay */
+/* Hero Block — MFS Style (matched from www.mfs.com) */
 
 .hero {
   position: relative;
@@ -28,21 +27,21 @@
   margin: 0 auto;
 }
 
+/* H1: FFDINWebMedium, 28px, weight 400, white */
 .hero h1 {
   color: #fff;
   font-size: 28px;
-  font-weight: 500;
-  margin: 0 0 8px;
+  font-weight: 400;
+  margin: 0 0 12px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* H2: 24px, weight 400, white, normal case (NOT uppercase) */
 .hero h2 {
   color: #fff;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 400;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -60,6 +59,6 @@
   }
 
   .hero h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
