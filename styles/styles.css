@@ -250,3 +250,9 @@ main .section.dark {
 main .section.dark h2, main .section.dark h3, main .section.dark a {
   color: var(--footer-text);
 }
+
+/* Hero section full-bleed — breaks out of max-width container */
+main > .section.hero-container > div {
+  max-width: unset;
+  padding: 0;
+}

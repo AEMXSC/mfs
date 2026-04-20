@@ -1,5 +1,5 @@
-/* Cards Block — MFS Style (matched from www.mfs.com) */
-/* Title above image, centered layout, burgundy text links */
+/* Cards Block — MFS Style */
+/* Title above image, centered, burgundy links */
 
 .cards > ul {
   list-style: none;
@@ -12,22 +12,16 @@
 
 .cards > ul > li {
   text-align: center;
-}
-
-/* Title ABOVE image — reverse the default order */
-.cards > ul > li {
   display: flex;
   flex-direction: column-reverse;
 }
 
-/* Image */
 .cards > ul > li > div:first-child picture img {
   width: 100%;
   aspect-ratio: 317 / 190;
   object-fit: cover;
 }
 
-/* Title area — burgundy, centered, 28px */
 .cards > ul > li > div:last-child {
   padding: 0 0 8px;
 }
@@ -36,59 +30,7 @@
   margin: 0 0 8px;
 }
 
-.cards > ul > li > div:last-child a {
-  color: var(--accent-primary, #4b0532);
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-}
-
-.cards > ul > li > div:last-child a:hover {
-  color: var(--accent-secondary, #bd173d);
-  text-decoration: underline;
-}
-
-/* Learn More CTA — right-aligned, red, with arrow feel */
-.cards + p {
-  text-align: right;
-  margin-top: 24px;
-}
-
-.cards + p a {
-  color: var(--accent-secondary, #bd173d);
-  font-size: 18px;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.cards + p a:hover {
-  text-decoration: underline;
-}
-
-.cards + p a::after {
-  content: ' →';
-}
-
-@media (width >= 600px) {
-  .cards > ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (width >= 900px) {
-  .cards > ul {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .cards > ul > li > div:last-child a {
-    font-size: 28px;
-  }
-}
-
-/* Override EDS button decoration inside cards — show as text links, not buttons */
+/* Override EDS button decoration — show as burgundy text links */
 .cards .button-wrapper {
   margin: 0;
 }
@@ -100,7 +42,7 @@
   border-radius: 0;
   padding: 0;
   color: var(--accent-primary, #4b0532);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: none;
   letter-spacing: normal;
@@ -115,7 +57,46 @@
   text-decoration: underline;
 }
 
+/* Learn More — right-aligned, red, arrow */
+.cards ~ p,
+.cards + p {
+  text-align: right;
+  margin-top: 24px;
+  padding-right: 0;
+}
+
+.cards ~ p a,
+.cards + p a {
+  color: var(--accent-secondary, #bd173d);
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.cards ~ p a:hover,
+.cards + p a:hover {
+  text-decoration: underline;
+}
+
+.cards ~ p a::after,
+.cards + p a::after {
+  content: ' ›';
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media (width >= 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
   .cards a.button {
     font-size: 28px;
   }
