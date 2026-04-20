@@ -1,0 +1,20 @@
+{
+  "url": "https://www.mfs.com/corporate/en/home.html",
+  "title": "Mutual Funds, Active ETFs, Investment Insights & More | MFS",
+  "description": "MFS corporate homepage - investment management since 1924",
+  "image": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Corp-Site-Hero-1600x440.jpg",
+  "previewPath": "content/index",
+  "paths": {
+    "screenshot": "migration-work/screenshot.png",
+    "cleaned": "migration-work/cleaned.html",
+    "images": "migration-work/images/",
+    "structure": "migration-work/page-structure.json",
+    "authoring": "migration-work/authoring-analysis.json"
+  },
+  "sourceInfo": {
+    "cms": "Adobe Experience Manager (AEM CS)",
+    "jcrPath": "/content/mfs-enterprise/mfscom/corporate/en/home",
+    "clientlibs": "/etc/designs/mfs-enterprise/mfscom/clientlibraries/",
+    "dam": "/content/dam/mfs-enterprise/mfscom/"
+  }
+}

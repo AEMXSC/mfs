@@ -1,0 +1,123 @@
+{
+  "url": "https://www.mfs.com/corporate/en/home.html",
+  "title": "MFS Homepage",
+  "sections": [
+    {
+      "id": "section-hero",
+      "name": "Hero with Role Selection",
+      "style": null,
+      "sequences": [
+        {
+          "type": "block",
+          "blockName": "hero",
+          "description": "Full-width hero banner with background image (city skyline), H1 'Welcome to MFS', H2 subtitle, and 3 role selection cards (Individual Investor, Investment Professional, Institutions & Consultants). Each card has a title, description, and is clickable.",
+          "selector": ".heroBannerWithRoleContainer",
+          "content": {
+            "backgroundImage": {
+              "desktop": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Corp-Site-Hero-1600x440.jpg",
+              "mobile": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Corp-Site-Hero-MOBILE.jpg"
+            },
+            "heading": "Welcome to MFS",
+            "subheading": "SELECT A ROLE TO PERSONALIZE YOUR EXPERIENCE",
+            "cards": [
+              {
+                "title": "Individual Investor",
+                "description": "I want information about MFS or on investment options managed by MFS.",
+                "link": "/en/individual-investor.html"
+              },
+              {
+                "title": "Investment Professional",
+                "description": "I invest on behalf of my clients.",
+                "link": "/en/investment-professional.html"
+              },
+              {
+                "title": "Institutions & Consultants",
+                "description": "I consult or invest on behalf of an institution.",
+                "link": "/en/institutions-and-consultants.html"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-value-proposition",
+      "name": "Value Proposition",
+      "style": null,
+      "sequences": [
+        {
+          "type": "default",
+          "description": "Default content: H2 heading 'Creating Value Responsibly' + H3 body text about MFS history since 1924",
+          "selector": ".aem-wrap--rich-text",
+          "content": {
+            "heading": "Creating Value Responsibly",
+            "body": "Since inventing the mutual fund in 1924, we have remained committed to our clients and our purpose to create value responsibly through:"
+          }
+        }
+      ]
+    },
+    {
+      "id": "section-pillars",
+      "name": "Three Pillars",
+      "style": null,
+      "sequences": [
+        {
+          "type": "block",
+          "blockName": "cards",
+          "description": "3 linked image cards showing MFS core values: Collective Expertise, Risk Management, Long-Term Discipline. Each card has an image and title linking to the Our Purpose page. Followed by a 'Learn More' CTA link.",
+          "selector": ".aem-wrap--asset-list-with-links",
+          "content": {
+            "cards": [
+              {
+                "title": "Collective Expertise",
+                "image": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Collective_Expertise_317x190.jpg",
+                "link": "https://www.mfs.com/corporate/en/about-mfs/our-purpose.html?tabname=inPageNavigation-tab1"
+              },
+              {
+                "title": "Risk Management",
+                "image": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Risk_Management_317x190.jpg",
+                "link": "https://www.mfs.com/corporate/en/about-mfs/our-purpose.html?tabname=inPageNavigation-tab2"
+              },
+              {
+                "title": "Long-Term Discipline",
+                "image": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Longterm_Discipline_317x190.jpg",
+                "link": "https://www.mfs.com/corporate/en/about-mfs/our-purpose.html?tabname=inPageNavigation-tab3"
+              }
+            ],
+            "cta": {
+              "text": "Learn More",
+              "link": "https://www.mfs.com/corporate/en/about-mfs/our-purpose.html"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "title": "Mutual Funds, Active ETFs, Investment Insights & More | MFS",
+    "description": "MFS corporate homepage - investment management since 1924",
+    "og:title": "Mutual Funds, Active ETFs, Investment Insights & More | MFS",
+    "template": "homepage"
+  },
+  "navigation": {
+    "logo": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/graphics/logos/mfs_logo2.png",
+    "primaryLinks": ["About MFS", "Our History", "Our Impact", "Our People", "Our Purpose"],
+    "utilityLinks": ["Login", "Search"]
+  },
+  "footer": {
+    "logo": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/graphics/logos/mfs_logo2.png",
+    "social": ["Facebook", "Twitter", "YouTube", "LinkedIn", "Email"],
+    "columns": [
+      {
+        "heading": "MFS Investment Management®",
+        "links": ["About MFS", "Our History", "Our Impact", "Our People", "Our Purpose"]
+      },
+      {
+        "links": ["Contact Us", "Careers"]
+      },
+      {
+        "links": ["Privacy", "Online Privacy", "Terms of Use", "Cookies Policy", "Business Continuity", "California Consumer", "Privacy Act", "Become a Supplier", "Form CRS", "Manage Cookie Preferences"]
+      }
+    ]
+  }
+}

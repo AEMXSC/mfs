@@ -1,0 +1,59 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.mfs.com",
+        "https://www.mfs.com/corporate/en/home.html"
+      ],
+      "description": "MFS.com homepage - financial services landing page with hero, role selection, value proposition, and three pillar cards",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".heroBannerWithRoleContainer"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".aem-wrap--asset-list-with-links .asset-list-with-links"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero with Role Selection",
+          "selector": ".heroBannerWithRoleContainer",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-value-proposition",
+          "name": "Value Proposition",
+          "selector": ".aem-wrap--rich-text",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".rich-text h2",
+            ".rich-text h3"
+          ]
+        },
+        {
+          "id": "section-pillars",
+          "name": "Three Pillars",
+          "selector": ".aem-wrap--asset-list-with-links",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "url": "https://www.mfs.com/corporate/en/home.html",
+  "title": "Mutual Funds, Active ETFs, Investment Insights & More | MFS",
+  "sections": [
+    {
+      "id": "section-header",
+      "name": "Header / Navigation",
+      "description": "Logo, utility nav (login, search), primary nav with hamburger menu",
+      "selector": "header.js-main-header",
+      "elements": ["MFS logo", "Utility navigation", "Primary navigation links"]
+    },
+    {
+      "id": "section-hero",
+      "name": "Hero with Role Selection",
+      "description": "Full-width hero banner with city skyline image, Welcome heading, and 3 role selection cards (Individual Investor, Investment Professional, Institutions & Consultants)",
+      "selector": ".heroBannerWithRoleContainer",
+      "background": "Image: Corp-Site-Hero-1600x440.jpg (city skyline with MFS building)",
+      "elements": [
+        "H1: Welcome to MFS",
+        "H2: SELECT A ROLE TO PERSONALIZE YOUR EXPERIENCE",
+        "Card: Individual Investor - I want information about MFS or on investment options managed by MFS.",
+        "Card: Investment Professional - I invest on behalf of my clients.",
+        "Card: Institutions & Consultants - I consult or invest on behalf of an institution."
+      ]
+    },
+    {
+      "id": "section-value-proposition",
+      "name": "Creating Value Responsibly",
+      "description": "Rich text headline section with value proposition statement",
+      "selector": ".aem-wrap--rich-text",
+      "elements": [
+        "H2: Creating Value Responsibly",
+        "H3: Since inventing the mutual fund in 1924, we have remained committed to our clients and our purpose to create value responsibly through:"
+      ]
+    },
+    {
+      "id": "section-pillars",
+      "name": "Three Pillars Cards",
+      "description": "3 linked cards with images showing Collective Expertise, Risk Management, Long-Term Discipline + Learn More CTA",
+      "selector": ".aem-wrap--asset-list-with-links",
+      "elements": [
+        "Card 1: Collective Expertise (image + link to /about-mfs/our-purpose.html)",
+        "Card 2: Risk Management (image + link to /about-mfs/our-purpose.html)",
+        "Card 3: Long-Term Discipline (image + link to /about-mfs/our-purpose.html)",
+        "CTA: Learn More → /about-mfs/our-purpose.html"
+      ]
+    },
+    {
+      "id": "section-footer",
+      "name": "Footer",
+      "description": "Dark footer with MFS logo, social links, navigation columns, legal links",
+      "selector": "footer",
+      "elements": [
+        "MFS logo",
+        "Social: Facebook, Twitter, YouTube, LinkedIn, Email",
+        "Col 1: MFS Investment Management® - About MFS, Our History, Our Impact, Our People, Our Purpose",
+        "Col 2: Contact Us, Careers",
+        "Col 3: Privacy, Online Privacy, Terms of Use, Cookies Policy, Business Continuity, California Consumer, Privacy Act, Become a Supplier, Form CRS, Manage Cookie Preferences",
+        "Version: 39258.1"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Corp-Site-Hero-1600x440.jpg",
+      "alt": "MFS Building Hero",
+      "usage": "Hero background"
+    },
+    {
+      "src": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Corp-Site-Hero-MOBILE.jpg",
+      "alt": "MFS Building Hero Mobile",
+      "usage": "Hero background (mobile)"
+    },
+    {
+      "src": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/graphics/logos/mfs_logo2.png",
+      "alt": "MFS logo",
+      "usage": "Header + Footer logo"
+    },
+    {
+      "src": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Collective_Expertise_317x190.jpg",
+      "alt": "Collective Expertise",
+      "usage": "Pillar card 1"
+    },
+    {
+      "src": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Risk_Management_317x190.jpg",
+      "alt": "Risk Management",
+      "usage": "Pillar card 2"
+    },
+    {
+      "src": "https://www.mfs.com/content/dam/mfs-enterprise/mfscom/image-library/objects/Longterm_Discipline_317x190.jpg",
+      "alt": "Long-Term Discipline",
+      "usage": "Pillar card 3"
+    }
+  ],
+  "brandColors": {
+    "primary": "#6D1331",
+    "secondary": "#333333",
+    "accent": "#9B1B30",
+    "background": "#FFFFFF",
+    "footerBg": "#333333"
+  }
+}
