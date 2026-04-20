@@ -87,3 +87,36 @@
     font-size: 28px;
   }
 }
+
+/* Override EDS button decoration inside cards — show as text links, not buttons */
+.cards .button-wrapper {
+  margin: 0;
+}
+
+.cards a.button {
+  display: block;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--accent-primary, #4b0532);
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+  text-align: center;
+}
+
+.cards a.button:hover {
+  background: none;
+  border: none;
+  color: var(--accent-secondary, #bd173d);
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .cards a.button {
+    font-size: 28px;
+  }
+}
