@@ -1,15 +1,10 @@
-/* Header — MFS Style */
+/* Header — MFS Style (Two-Row Layout) */
+/* Row 1: Utility bar (Contact Us, Sign In) — light gray, right-aligned */
+/* Row 2: Logo + main nav (About MFS, Careers) — white */
+/* Then: Color bar gradient */
 
 header {
   background: #fff;
-  height: var(--nav-height, 64px);
-}
-
-header::after {
-  content: '';
-  display: block;
-  height: 4px;
-  background: linear-gradient(to right, var(--accent-primary, #4b0532) 33%, #c4122f 33% 66%, #00b4d8 66%);
 }
 
 header nav {
@@ -17,34 +12,87 @@ header nav {
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  align-items: center;
-  height: var(--nav-height, 64px);
+  flex-wrap: wrap;
 }
 
 header .nav-hamburger { display: none; }
 
-/* ─── Brand (Logo) ─── */
+/* ── Row 1: Utility bar (nav-tools) — moves to top via order ── */
+header .nav-tools {
+  order: -1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #f0f0f0;
+  margin: 0 -24px;
+  padding: 4px 24px;
+}
+
+header .nav-tools ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+header .nav-tools a {
+  color: var(--text-color, #404652);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+header .nav-tools a:hover {
+  color: var(--accent-secondary, #bd173d);
+}
+
+/* Sign In — burgundy pill button */
+header .nav-tools li:last-child a {
+  background: var(--accent-primary, #4b0532);
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+header .nav-tools li:last-child a:hover {
+  background: var(--accent-secondary, #bd173d);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Row 2: Logo + Nav (nav-brand + nav-sections) ── */
 header .nav-brand {
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
   margin-right: 32px;
 }
 
 header .nav-brand p { margin: 0; }
 
 header .nav-brand img {
-  height: 40px;
+  height: 44px;
   width: auto;
 }
 
-/* ─── Nav Sections (About MFS, Careers) ─── */
 header .nav-sections {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
+  padding: 12px 0;
 }
 
 header .nav-sections ul {
   list-style: none;
   display: flex;
-  gap: 24px;
+  gap: 28px;
   margin: 0;
   padding: 0;
 }
@@ -63,48 +111,19 @@ header .nav-sections a:hover {
   text-decoration: underline;
 }
 
-/* ─── Nav Tools (Contact Us, Sign In) ─── */
-header .nav-tools {
-  margin-left: auto;
+/* ── Color bar below header ── */
+header::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right,
+    var(--accent-primary, #4b0532) 33%,
+    #c4122f 33% 66%,
+    #00b4d8 66%
+  );
 }
 
-header .nav-tools ul {
-  list-style: none;
-  display: flex;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-header .nav-tools a {
-  color: var(--text-color, #404652);
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-header .nav-tools a:hover {
-  color: var(--accent-secondary, #bd173d);
-}
-
-/* Sign In pill button */
-header .nav-tools li:last-child a {
-  background: var(--accent-primary, #4b0532);
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 2px;
-  font-size: 12px;
-}
-
-header .nav-tools li:last-child a:hover {
-  background: var(--accent-secondary, #bd173d);
-  color: #fff;
-  text-decoration: none;
-}
-
-/* ─── Dropdown Mega Menu ─── */
+/* ── Dropdown ── */
 header .nav-sections li {
   position: relative;
 }
@@ -112,22 +131,21 @@ header .nav-sections li {
 header .nav-sections li > ul {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 12px);
   left: 0;
   background: #fff;
   border: 1px solid #eee;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   padding: 24px;
   min-width: 200px;
   z-index: 100;
   list-style: none;
-  margin: 8px 0 0;
+  margin: 0;
   flex-direction: column;
   gap: 4px;
 }
 
-header .nav-sections li:hover > ul,
-header .nav-sections li[aria-expanded="true"] > ul {
+header .nav-sections li:hover > ul {
   display: flex;
 }
 
@@ -136,7 +154,6 @@ header .nav-sections li > ul a {
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal;
-  display: block;
   padding: 4px 0;
   white-space: nowrap;
 }
@@ -150,21 +167,15 @@ header .nav-sections li > ul > li:first-child a {
   margin-bottom: 4px;
 }
 
-/* Dropdown caret */
-header .nav-sections > .default-content-wrapper > ul > li:has(> ul) > a::after {
-  content: ' ▾';
-  font-size: 10px;
-}
-
-/* ─── Mobile ─── */
+/* ── Mobile ── */
 @media (width < 900px) {
   header .nav-sections,
   header .nav-tools {
     display: none;
   }
-
   header .nav-hamburger {
     display: block;
     margin-left: auto;
+    padding: 12px 0;
   }
 }
