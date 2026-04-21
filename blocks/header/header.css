@@ -128,3 +128,72 @@ header .nav-brand .default-content-wrapper > ul:nth-of-type(2) li:last-child a:h
     margin-left: auto;
   }
 }
+
+/* ─── Dropdown Mega Menu ─── */
+
+/* Nav items with dropdowns get a caret */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li {
+  position: relative;
+}
+
+/* Nested <ul> = dropdown panel — hidden by default */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  min-width: 240px;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+}
+
+/* Show dropdowns when nav item has aria-expanded or on hover */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li:hover > ul,
+header .nav-brand .default-content-wrapper > ul:first-of-type > li[aria-expanded="true"] > ul {
+  display: flex;
+  gap: 32px;
+}
+
+/* Multi-column: each nested <ul> is a column */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li > ul {
+  flex-direction: row;
+}
+
+/* Column heading — first <li> in each nested <ul> */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li > ul > li:first-child a {
+  color: var(--text-color, #404652);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: auto;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Sub-links */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li > ul > li a {
+  color: var(--accent-secondary, #bd173d);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  display: block;
+  padding: 4px 0;
+}
+
+header .nav-brand .default-content-wrapper > ul:first-of-type > li > ul > li a:hover {
+  color: var(--accent-primary, #4b0532);
+  text-decoration: underline;
+}
+
+/* Dropdown caret indicator */
+header .nav-brand .default-content-wrapper > ul:first-of-type > li:has(> ul) > a::after {
+  content: ' ▾';
+  font-size: 10px;
+}
